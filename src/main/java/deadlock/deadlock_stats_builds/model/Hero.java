@@ -2,6 +2,8 @@ package deadlock.deadlock_stats_builds.model;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 public class Hero {
     @Id
@@ -52,6 +54,12 @@ public class Hero {
 
     @Column
     int stamina;
+
+    @OneToMany(
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    List<Ability> abilities;
 
     public String getName() {
         return name;
