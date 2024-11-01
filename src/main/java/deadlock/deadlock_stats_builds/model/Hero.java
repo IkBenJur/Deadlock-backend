@@ -2,7 +2,7 @@ package deadlock.deadlock_stats_builds.model;
 
 import jakarta.persistence.*;
 
-import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Hero {
@@ -59,7 +59,7 @@ public class Hero {
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    List<Ability> abilities;
+    Set<Ability> abilities;
 
     public String getName() {
         return name;
@@ -179,5 +179,13 @@ public class Hero {
 
     public void setStamina(int stamina) {
         this.stamina = stamina;
+    }
+
+    public Set<Ability> getAbilities() {
+        return abilities;
+    }
+
+    public void setAbilities(Set<Ability> abilities) {
+        this.abilities = abilities;
     }
 }

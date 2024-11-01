@@ -2,11 +2,13 @@ package deadlock.deadlock_stats_builds.model;
 
 import jakarta.persistence.*;
 
+import java.util.Set;
+
 @Entity
 public class Ability {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int id;
+    int abilityId;
 
     @Column
     String name;
@@ -25,6 +27,14 @@ public class Ability {
 
     @Column
     String upgradeThree;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "Ability_AbilityEffect",
+            joinColumns = { @JoinColumn(name = "abilityId")},
+            inverseJoinColumns = { @JoinColumn(name = "abilityEffectId")}
+    )
+    Set<AbilityEffect> abilityEffects;
 
     public String getName() {
         return name;
@@ -72,5 +82,13 @@ public class Ability {
 
     public void setUpgradeThree(String upgradeThree) {
         this.upgradeThree = upgradeThree;
+    }
+
+    public Set<AbilityEffect> getAbilityEffects() {
+        return abilityEffects;
+    }
+
+    public void setAbilityEffects(Set<AbilityEffect> abilityEffects) {
+        this.abilityEffects = abilityEffects;
     }
 }
