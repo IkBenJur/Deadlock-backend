@@ -15,7 +15,43 @@ public class Hero {
     String description;
 
     @Column
-    int health;
+    int dps;
+
+    @Column
+    int bulletDamage;
+
+    @Column
+    int ammo;
+
+    @Column
+    int bulletPerSeconds;
+
+    @Column
+    int lightMelee;
+
+    @Column
+    int heavyMelee;
+
+    @Column
+    int maxHealth;
+
+    @Column
+    int regen;
+
+    @Column
+    int bulletResist;
+
+    @Column
+    int spiritResist;
+
+    @Column
+    float moveSpeed;
+
+    @Column
+    float sprintSpeed;
+
+    @Column
+    int stamina;
 
     public String getName() {
         return name;
@@ -33,11 +69,107 @@ public class Hero {
         this.description = description;
     }
 
-    public int getHealth() {
-        return health;
+    public int getDps() {
+        return dps;
     }
 
-    public void setHealth(int health) {
-        this.health = health;
+    public void setDps(int dps) {
+        this.dps = dps;
+    }
+
+    public int getBulletDamage() {
+        return bulletDamage;
+    }
+
+    public void setBulletDamage(int bulletDamage) {
+        this.bulletDamage = bulletDamage;
+    }
+
+    public int getAmmo() {
+        return ammo;
+    }
+
+    public void setAmmo(int ammo) {
+        this.ammo = ammo;
+    }
+
+    public int getBulletPerSeconds() {
+        return bulletPerSeconds;
+    }
+
+    public void setBulletPerSeconds(int bulletPerSeconds) {
+        this.bulletPerSeconds = bulletPerSeconds;
+    }
+
+    public int getLightMelee() {
+        return lightMelee;
+    }
+
+    public void setLightMelee(int lightMelee) {
+        this.lightMelee = lightMelee;
+    }
+
+    public int getHeavyMelee() {
+        return heavyMelee;
+    }
+
+    public void setHeavyMelee(int heavyMelee) {
+        this.heavyMelee = heavyMelee;
+    }
+
+    public int getMaxHealth() {
+        return maxHealth;
+    }
+
+    public void setMaxHealth(int maxHealth) {
+        this.maxHealth = maxHealth;
+    }
+
+    public int getRegen() {
+        return regen;
+    }
+
+    public void setRegen(int regen) {
+        this.regen = regen;
+    }
+
+    public int getBulletResist() {
+        return bulletResist;
+    }
+
+    public void setBulletResist(int bulletResist) {
+        this.bulletResist = bulletResist;
+    }
+
+    public int getSpiritResist() {
+        return spiritResist;
+    }
+
+    public void setSpiritResist(int spiritResist) {
+        this.spiritResist = spiritResist;
+    }
+
+    public float getMoveSpeed() {
+        return moveSpeed;
+    }
+
+    public void setMoveSpeed(float moveSpeed) {
+        this.moveSpeed = moveSpeed;
+    }
+
+    public float getSprintSpeed() {
+        return sprintSpeed;
+    }
+
+    public void setSprintSpeed(float sprintSpeed) {
+        this.sprintSpeed = sprintSpeed;
+    }
+
+    public int getStamina() {
+        return stamina;
+    }
+
+    public void setStamina(int stamina) {
+        this.stamina = stamina;
     }
 }
