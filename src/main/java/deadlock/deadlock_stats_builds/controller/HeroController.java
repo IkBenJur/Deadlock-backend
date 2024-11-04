@@ -17,11 +17,13 @@ public class HeroController {
     private HeroService heroService;
 
     @GetMapping("/")
+    @CrossOrigin("http://localhost:4200")
     public List<Hero> getHeroes(){
         return heroService.allHeroes();
     }
 
     @GetMapping("/{id}")
+    @CrossOrigin("http://localhost:4200")
     public Hero getHero(@PathVariable("id") Long id) {
         try {
             return heroService.getHero(id);
