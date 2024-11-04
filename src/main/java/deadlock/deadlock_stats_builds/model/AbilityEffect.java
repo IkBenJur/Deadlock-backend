@@ -12,7 +12,7 @@ public class AbilityEffect {
     String Effect;
 
     @Column
-    int value;
+    String value;
 
     public String getEffect() {
         return Effect;
@@ -22,11 +22,11 @@ public class AbilityEffect {
         Effect = effect;
     }
 
-    public int getValue() {
+    public String getValue() {
         return value;
     }
 
-    public void setValue(int value) {
+    public void setValue(String value) {
         this.value = value;
     }
 }

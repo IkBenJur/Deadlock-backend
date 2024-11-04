@@ -26,7 +26,7 @@ public class Hero {
     int ammo;
 
     @Column
-    int bulletPerSeconds;
+    float bulletPerSeconds;
 
     @Column
     int lightMelee;
@@ -105,11 +105,11 @@ public class Hero {
         this.ammo = ammo;
     }
 
-    public int getBulletPerSeconds() {
+    public float getBulletPerSeconds() {
         return bulletPerSeconds;
     }
 
-    public void setBulletPerSeconds(int bulletPerSeconds) {
+    public void setBulletPerSeconds(float bulletPerSeconds) {
         this.bulletPerSeconds = bulletPerSeconds;
     }
 
