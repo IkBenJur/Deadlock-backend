@@ -61,6 +61,10 @@ public class Hero {
     )
     Set<Ability> abilities;
 
+    public int getId() {
+        return id;
+    }
+
     public String getName() {
         return name;
     }
