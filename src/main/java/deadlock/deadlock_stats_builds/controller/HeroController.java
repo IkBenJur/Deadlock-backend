@@ -3,9 +3,9 @@ package deadlock.deadlock_stats_builds.controller;
 import deadlock.deadlock_stats_builds.model.Hero;
 import deadlock.deadlock_stats_builds.service.HeroService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -19,5 +19,14 @@ public class HeroController {
     @GetMapping("/")
     public List<Hero> getHeroes(){
         return heroService.allHeroes();
+    }
+
+    @GetMapping("/{id}")
+    public Hero getHero(@PathVariable("id") Long id) {
+        try {
+            return heroService.getHero(id);
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Id not found");
+        }
     }
 }
