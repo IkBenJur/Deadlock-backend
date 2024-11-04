@@ -28,6 +28,9 @@ public class Ability {
     @Column
     String upgradeThree;
 
+    @Column
+    int abilityNumber;
+
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name = "Ability_AbilityEffect",
@@ -90,5 +93,13 @@ public class Ability {
 
     public void setAbilityEffects(Set<AbilityEffect> abilityEffects) {
         this.abilityEffects = abilityEffects;
+    }
+
+    public int getAbilityNumber() {
+        return abilityNumber;
+    }
+
+    public void setAbilityNumber(int abilityNumber) {
+        this.abilityNumber = abilityNumber;
     }
 }
