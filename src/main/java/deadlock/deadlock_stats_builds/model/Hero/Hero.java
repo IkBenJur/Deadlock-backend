@@ -1,15 +1,23 @@
 package deadlock.deadlock_stats_builds.model.Hero;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerator;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import deadlock.deadlock_stats_builds.model.Item.Build;
 import jakarta.persistence.*;
 
 import java.util.Set;
 
 @Entity
+@JsonIdentityInfo(
+        generator = ObjectIdGenerators.PropertyGenerator.class,
+        property = "heroId",
+        scope = Hero.class
+)
 public class Hero {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int id;
+    int heroId;
 
     @Column
     String name;
@@ -68,8 +76,8 @@ public class Hero {
     )
     Set<Build> builds;
 
-    public int getId() {
-        return id;
+    public int getHeroId() {
+        return heroId;
     }
 
     public String getName() {

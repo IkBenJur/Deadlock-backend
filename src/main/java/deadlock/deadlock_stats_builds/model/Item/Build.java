@@ -1,16 +1,24 @@
 package deadlock.deadlock_stats_builds.model.Item;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import deadlock.deadlock_stats_builds.model.Hero.Hero;
 import jakarta.persistence.*;
 
 import java.util.Date;
 import java.util.Set;
 
 @Entity
+@JsonIdentityInfo(
+        generator = ObjectIdGenerators.PropertyGenerator.class,
+        property = "buildId",
+        scope = Build.class
+)
 public class Build {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    Long buildId;
 
     @Column
     String name;
@@ -27,8 +35,12 @@ public class Build {
     )
     Set<ItemSet> itemSets;
 
-    public Long getId() {
-        return id;
+    @ManyToOne
+    @JoinColumn(name = "hero_id", referencedColumnName = "heroId")
+    Hero hero;
+
+    public Long getBuildId() {
+        return buildId;
     }
 
     public String getName() {
@@ -61,5 +73,13 @@ public class Build {
 
     public void setItemSets(Set<ItemSet> itemSets) {
         this.itemSets = itemSets;
+    }
+
+    public Hero getHero() {
+        return hero;
+    }
+
+    public void setHero(Hero hero) {
+        this.hero = hero;
     }
 }
