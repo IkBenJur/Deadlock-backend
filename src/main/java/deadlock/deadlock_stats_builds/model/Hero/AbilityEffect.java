@@ -1,4 +1,4 @@
-package deadlock.deadlock_stats_builds.model;
+package deadlock.deadlock_stats_builds.model.Hero;
 
 import jakarta.persistence.*;
 
