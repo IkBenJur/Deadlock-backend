@@ -11,4 +11,16 @@ public class ItemEffect {
 
     @Column
     String effect;
+
+    public Long getItemEffectId() {
+        return itemEffectId;
+    }
+
+    public String getEffect() {
+        return effect;
+    }
+
+    public void setEffect(String effect) {
+        this.effect = effect;
+    }
 }

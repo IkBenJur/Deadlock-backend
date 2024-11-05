@@ -1,5 +1,6 @@
 package deadlock.deadlock_stats_builds.model.Hero;
 
+import deadlock.deadlock_stats_builds.model.Item.Build;
 import jakarta.persistence.*;
 
 import java.util.Set;
@@ -60,6 +61,12 @@ public class Hero {
             orphanRemoval = true
     )
     Set<Ability> abilities;
+
+    @OneToMany(
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    Set<Build> builds;
 
     public int getId() {
         return id;
@@ -191,5 +198,13 @@ public class Hero {
 
     public void setAbilities(Set<Ability> abilities) {
         this.abilities = abilities;
+    }
+
+    public Set<Build> getBuilds() {
+        return builds;
+    }
+
+    public void setBuilds(Set<Build> builds) {
+        this.builds = builds;
     }
 }

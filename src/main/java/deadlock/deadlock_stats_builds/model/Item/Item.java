@@ -29,7 +29,7 @@ public class Item {
             joinColumns = { @JoinColumn(name = "itemId")},
             inverseJoinColumns = { @JoinColumn(name = "itemEffectId")}
     )
-    Set<Item> effects;
+    Set<ItemEffect> effects;
 
     public Long getItemId() {
         return itemId;
@@ -67,11 +67,11 @@ public class Item {
         this.active = active;
     }
 
-    public Set<Item> getEffects() {
+    public Set<ItemEffect> getEffects() {
         return effects;
     }
 
-    public void setEffects(Set<Item> effects) {
+    public void setEffects(Set<ItemEffect> effects) {
         this.effects = effects;
     }
 }
