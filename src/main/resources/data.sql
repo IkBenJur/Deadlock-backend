@@ -24,6 +24,8 @@ INSERT INTO `ability_ability_effect` (`ability_effect_id`, `ability_id`) VALUES 
 
 INSERT INTO `hero` (`ammo`, `bullet_damage`, `bullet_per_seconds`, `bullet_resist`, `dps`, `heavy_melee`, `hero_id`, `light_melee`, `max_health`, `move_speed`, `regen`, `spirit_resist`, `sprint_speed`, `stamina`, `description`, `name`) VALUES ('15', '21', '4', '0', '83', '116', NULL, '63', '600', '6.5', '2', '0', '0', '3', 'Kelvin is a beginner-friendly hero who can adapt to a wide range of playstyles. \r\n\r\nWant to be a tanky frontliner? Prefer to be more supportive with heals? Split push and apply pressure across the map? He’s your guy.', 'Kelvin');
 
+INSERT INTO `hero_abilities` (`abilities_ability_id`, `hero_hero_id`) VALUES ('1', '1'), ('2', '1'), ('3', '1'), ('4', '1');
+
 INSERT INTO `item_effect` (`item_effect_id`, `effect`) VALUES (NULL, '+24% Ammo'), (NULL, '+15% Weapon Damage');
 
 INSERT INTO `item` (`active`, `cost`, `item_id`, `name`, `type`) VALUES (b'0', '500', NULL, 'Basic Magazine', 'WEAPON');
