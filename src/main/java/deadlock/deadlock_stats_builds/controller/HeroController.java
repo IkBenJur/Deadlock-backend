@@ -1,5 +1,6 @@
 package deadlock.deadlock_stats_builds.controller;
 
+import deadlock.deadlock_stats_builds.exception.HeroNotFoundException;
 import deadlock.deadlock_stats_builds.model.Hero.Hero;
 import deadlock.deadlock_stats_builds.service.HeroService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +29,7 @@ public class HeroController {
         try {
             return heroService.getHero(id);
         } catch (Exception e) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Id not found");
+            throw new HeroNotFoundException("Hero with id " + id + " not found");
         }
     }
 }
