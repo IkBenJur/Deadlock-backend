@@ -22,6 +22,17 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(msg, HttpStatus.NOT_FOUND);
     }
 
+    @ExceptionHandler(InvalidItemTypeException.class)
+    public ResponseEntity<ErrorMessage> invalidItemException(InvalidItemTypeException ex, WebRequest request){
+        ErrorMessage msg = new ErrorMessage(
+                HttpStatus.BAD_REQUEST.value(),
+                new Date(),
+                ex.getMessage(),
+                request.getDescription(false)
+        );
+        return new ResponseEntity<>(msg, HttpStatus.NOT_FOUND);
+    }
+
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorMessage> globalExceptionHandler(Exception ex, WebRequest request) {
         ErrorMessage msg = new ErrorMessage(
