@@ -13,7 +13,11 @@ public class BuildService {
     @Autowired
     BuildRepository buildRepository;
 
-    public List<Build> allBuilds(){
+    public List<Build> allBuilds() {
         return (List<Build>) buildRepository.findAll();
+    }
+
+    public Build createBuild(Build build) {
+        return buildRepository.save(build);
     }
 }
