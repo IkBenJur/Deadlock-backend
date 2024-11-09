@@ -41,3 +41,15 @@ INSERT INTO `build` (`hero_id`, `build_id`, `created_at`, `description`, `name`)
 INSERT INTO `build_item_sets` (`build_build_id`, `item_sets_item_set_id`) VALUES ('1', '1');
 
 INSERT INTO `hero_builds` (`hero_hero_id`, `builds_build_id`) VALUES ('1', '1');
+
+INSERT INTO `item_effect` (`item_effect_id`, `effect`) VALUES (NULL, '+160 Bonus Health'), (NULL, '+5% Weapon Damage');
+
+INSERT INTO `item` (`active`, `cost`, `item_id`, `name`, `type`) VALUES (b'0', '500', NULL, 'Extra Health', 'VITALITY');
+
+INSERT INTO `item_item_effect` (`item_effect_id`, `item_id`) VALUES ('3', '2'), ('4', '2');
+
+INSERT INTO `item_effect` (`item_effect_id`, `effect`) VALUES (NULL, '+9 Spirit Power'), (NULL, '+1 Health Regen'), (NULL, '+35 Bonus Health'), (NULL, 'Improved Spirit Component');
+
+INSERT INTO `item` (`active`, `cost`, `item_id`, `name`, `type`) VALUES (b'0', '500', NULL, 'Extra Spirit', 'SPIRIT');
+
+INSERT INTO `item_item_effect` (`item_effect_id`, `item_id`) VALUES ('5', '3'), ('6', '3'), ('7', '3'), ('8', '3');
