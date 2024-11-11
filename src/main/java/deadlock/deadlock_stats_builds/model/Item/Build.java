@@ -30,7 +30,6 @@ public class Build {
     Date createdAt;
 
     @OneToMany(
-            cascade = CascadeType.ALL,
             orphanRemoval = true
     )
     Set<ItemSet> itemSets;

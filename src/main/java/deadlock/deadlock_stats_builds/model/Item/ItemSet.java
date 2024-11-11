@@ -14,7 +14,7 @@ public class ItemSet {
     @Column
     String name;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany()
     @JoinTable(
             name = "ItemSet_Item",
             joinColumns = { @JoinColumn(name = "itemSetId")},
