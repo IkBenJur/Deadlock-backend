@@ -16,6 +16,12 @@ public class ItemController {
     @Autowired
     private ItemService itemService;
 
+    @GetMapping("/")
+    @CrossOrigin("http://localhost:4200")
+    public List<Item> getAllItems() {
+        return itemService.getAllItems();
+    }
+
     @GetMapping("/{type}")
     @CrossOrigin("http://localhost:4200")
     public List<Item> getByType(@PathVariable("type") String type){

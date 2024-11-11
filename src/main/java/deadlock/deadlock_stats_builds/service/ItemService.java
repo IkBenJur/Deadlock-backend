@@ -14,6 +14,10 @@ public class ItemService {
     @Autowired
     ItemRepository itemRepository;
 
+    public List<Item> getAllItems() {
+        return (List<Item>) itemRepository.findAll();
+    }
+
     public List<Item> getByType(ItemType type) {
         return itemRepository.findByType(type);
     }
