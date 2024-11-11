@@ -1,5 +1,6 @@
 package deadlock.deadlock_stats_builds.controller;
 
+import deadlock.deadlock_stats_builds.model.Hero.Hero;
 import deadlock.deadlock_stats_builds.model.Item.Build;
 import deadlock.deadlock_stats_builds.model.Item.ItemSet;
 import deadlock.deadlock_stats_builds.service.BuildService;
@@ -26,6 +27,16 @@ public class BuildController {
     @CrossOrigin("http://localhost:4200")
     public List<Build> getBuilds() {
         return buildService.allBuilds();
+    }
+
+    @GetMapping("/{id}")
+    @CrossOrigin("http://localhost:4200")
+    public Build getBuild(@PathVariable("id") Long id) {
+        try {
+            return buildService.getBuild(id);
+        } catch (Exception ex) {
+            throw ex;
+        }
     }
 
     @PostMapping("/")
