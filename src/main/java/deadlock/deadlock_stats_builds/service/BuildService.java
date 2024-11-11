@@ -2,6 +2,7 @@ package deadlock.deadlock_stats_builds.service;
 
 import deadlock.deadlock_stats_builds.exception.BuildNotFoundException;
 import deadlock.deadlock_stats_builds.model.Item.Build;
+import deadlock.deadlock_stats_builds.model.Item.BuildNameDescriptionDTO;
 import deadlock.deadlock_stats_builds.repository.BuildRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,5 +32,9 @@ public class BuildService {
         }
 
         return result.get();
+    }
+
+    public List<BuildNameDescriptionDTO> findNameAndDescriptionByHeroId(Long id) {
+        return buildRepository.findBuildIdNameDescriptionByHeroHeroId(id);
     }
 }

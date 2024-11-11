@@ -2,6 +2,7 @@ package deadlock.deadlock_stats_builds.controller;
 
 import deadlock.deadlock_stats_builds.model.Hero.Hero;
 import deadlock.deadlock_stats_builds.model.Item.Build;
+import deadlock.deadlock_stats_builds.model.Item.BuildNameDescriptionDTO;
 import deadlock.deadlock_stats_builds.model.Item.ItemSet;
 import deadlock.deadlock_stats_builds.service.BuildService;
 import deadlock.deadlock_stats_builds.service.ItemSetServce;
@@ -45,5 +46,11 @@ public class BuildController {
         List<ItemSet> itemSets = itemSetServce.createItemSets(newBuild.getItemSets());
         Build build = buildService.createBuild(newBuild);
         return ResponseEntity.status(HttpStatus.CREATED.value()).body(build);
+    }
+
+    @GetMapping("/hero/name-description/{id}")
+    @CrossOrigin("http://localhost:4200")
+    public List<BuildNameDescriptionDTO> getNameDescriptionByHeroId(@PathVariable("id") Long heroId){
+        return buildService.findNameAndDescriptionByHeroId(heroId);
     }
 }
